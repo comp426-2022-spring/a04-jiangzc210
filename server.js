@@ -71,6 +71,9 @@ if (args['debug']) {
 		const stmt = db.prepare('SELECT * FROM accesslog').all();
         res.status(200).json(stmt);
 	});
+	app.get('/app/error', (req, res) => {
+		throw new Error('Error test successful.');
+	});
 }
 
 //import coin modules
